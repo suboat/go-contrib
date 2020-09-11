@@ -23,7 +23,7 @@ var (
 	ErrObjectUndefined                = NewErr(60, "object undefined", "rest")                                              // 参数未定义
 	ErrPermUndefined                  = NewErr(61, "permission undefined", "rest")                                          // 权限未定义
 	ErrPermNotAllow                   = NewErr(62, "action not allow {{.var1}}", "rest")                                    // 动作不允许 {{.var1}}
-	ErrParamUndefined                 = NewErr(63, "params undefined", "rest")                                              // 参数未定义
+	ErrParamUndefined                 = NewErr(63, "params undefined", "rest")                                              // 无效的输入
 	ErrUndefined                      = NewErr(64, "undefined {{.var1}}", "rest")                                           // 未定义 {{.var1}}
 	ErrRpcDevelopmentPhaseOnly        = NewErr(65, "this rpc can user in development phase only", "rest")                   // 只能在开发阶段
 	ErrRpcConnectionRefused           = NewErr(66, "rpc connection refused", "rest")                                        // rpc无法连接
@@ -40,12 +40,13 @@ var (
 	ErrTokenInvalid                   = NewErr(77, "token invalid", "rest")                                                 // token.valid为false
 	ErrTokenClaimsInvalid             = NewErr(78, "token claims invalid", "rest")                                          // token.Claims无法解析出
 	ErrTokenChangePassword            = NewErr(79, "token change password", "rest")                                         // token密码改变
-	ErrTokenChangeFreeze              = NewErr(80, "token change freeze", "rest")                                           // token状态改变
+	ErrTokenChangeFreeze              = NewErr(80, "user freeze", "rest")                                                   // 已禁用的用户
 	ErrTokenChangeLogout              = NewErr(81, "token change logout", "rest")                                           // token状态改变
 	ErrHookPluginNotFound             = NewErr(82, "not plugin file(s) found", "rest")                                      // 读不到任何插件文件
 	ErrTimeout                        = NewErr(83, "timeout {{.var1}}", "rest")                                             // 超时{{.var1}}
 	ErrPanicRecover                   = NewErr(84, "panic {{.var1}}", "rest")                                               // 恐慌错误 {{.var1}}
 	ErrModelInited                    = NewErr(85, "model is not init", "rest")                                             // 初始化错误
+	ErrSessionInvalid                 = NewErr(86, "session wrong {{.var1}}", "rest")                                       // 会话错误 {{.var1}}
 	ErrOrmMatchNone                   = NewErr(116, "match none", "rest")                                                   // 数据库找不到对象
 	ErrOrmMatchMultiple               = NewErr(117, "match multiple", "rest")                                               // 期望搜到一条记录，但是返回多条
 	ErrParamInvalid                   = NewErr(129, "params invalid {{.var1}}", "rest")                                     // 参数非法 {{.var1}}
